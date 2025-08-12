@@ -20,13 +20,14 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav className='fixed top-0 left-0 w-full z-50 py-6'>
+        <nav className='top-0 left-0 w-full z-50 py-6'>
             <div className='max-w-[1440px] mx-auto px-6 md:px-20 flex justify-between items-center'>
 
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
                     whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
 
                 >
                     <Link to="/" className="text-[25px] mr-12 md:text-[25px] lg:text-[30px] font-black">DEE.FLICKZ</Link>
@@ -38,6 +39,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }}
                     whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.85 }}
                 >
                     ☰
                 </motion.button>
@@ -57,7 +59,7 @@ export default function Navbar() {
                         {/* Top bar: logo + close button */}
                         <div className="max-w-[1440px] w-full mx-auto flex flex-col">
                             <div className="flex justify-between items-center  mt-7 px-18">
-                                <motion.div whileHover={{ scale: 1.05 }}>
+                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Link to="/" onClick={() => setIsOpen(false)}
                                         className="text-[30px] md:text-[50px] font-black">
                                         DEE.FLICKZ
@@ -68,6 +70,7 @@ export default function Navbar() {
                                     className="text-[30px] md:text-[50px] font-black"
                                     aria-label="Close Menu"
                                     whileHover={{ scale: 1.4 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     X
                                 </motion.button>
@@ -88,6 +91,7 @@ export default function Navbar() {
                                         key={index}
                                         whileHover={{ x: 20 }}
                                         transition={{ type: "spring", stiffness: 200 }}
+                                        whileTap={{ x: 15 }}
                                     >
                                         <Link to={link.path} onClick={() => setIsOpen(false)}>
                                             {link.name}
@@ -110,7 +114,9 @@ export default function Navbar() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex mt-10 items-center gap-2 text-white font-semibold text-[13px] md:text-[18px]"
+                                        aria-label={`Link to ${social.label}`} 
                                         whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.95 }}
                                     >
                                         {social.label}
 
