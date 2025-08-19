@@ -31,7 +31,7 @@ export default function Vision() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.5 }}
                 viewport={{ once: true }}
-                style={{ color: '#b6b6b6ff' }}
+                style={{ color: '#969696ff' }}
                 className="text-[17px] lg:text-[21px] xl:text-[25px] text-center font-medium w-85 xl:w-120">
                     I specialize in capturing clean, high-quality visuals for brands, events, and creators.
                     Whether it’s a fashion drop, a sports moment, or a behind-the-scenes 
@@ -42,7 +42,7 @@ export default function Vision() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.7 }}
                 viewport={{ once: true }}
-                style={{ color: '#b6b6b6ff' }}
+                style={{ color: '#969696ff' }}
                 className="text-[17px] lg:text-[21px] xl:text-[25px] text-center font-medium w-85 xl:w-120">
                     reel, my focus is on
                     telling your story in a way that feels real, intentional, and visually strong. Every frame

@@ -7,7 +7,7 @@ import CollabAndCTA from "./CollabAndCTA"
 
 export default function Home() {
     return (
-        <div className="w-full max-w-[1440px] mx-auto bg-black">
+        <div className="w-full max-w-[1440px] mx-auto">
             <Hero />
             
             <div className="md:my-5 lg:my-15">

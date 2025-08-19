@@ -17,8 +17,11 @@ export default function Services() {
                 viewport={{ once: true }}
                 className="flex-col text-start ml-5 mb-5">
                 <h2 className='text-[27px] md:text-[45px] font-extrabold'>My Skills And Experiences</h2>
-                <p className='text-[12px] md:text-[16px] font-regular w-95 md:w-135'>
-                    I create cinematic visuals across events, sports, and branded content - always balancing creative direction with technical skills</p>
+                <p
+                    style={{ color: '#969696ff' }}
+                    className='text-[12px] md:text-[16px] font-regular w-95 md:w-135'>
+                    I create cinematic visuals across events, sports, and branded content - always balancing creative direction with technical skills
+                </p>
             </motion.div>
 
             <Swiper
@@ -38,7 +41,7 @@ export default function Services() {
                         slidesPerView: 3
                     },
                     950: {
-                        slidesPerView: 3.0
+                        slidesPerView: 3.5
                     },
                     1528: {
                         slidesPerView: 3.8
@@ -64,7 +67,11 @@ export default function Services() {
                             </div>
                             <div className="flex flex-col ">
                                 <h2 className="text-[23px] lg:text-[30px] font-bold mb-1">{title}</h2>
-                                <p className="text-[12px] lg:text-[16px] font-regular whitespace-pre-line">{description}</p>
+                                <p
+                                    style={{ color: '#969696ff' }}
+                                    className="text-[12px] lg:text-[16px] font-regular whitespace-pre-line">
+                                    {description}
+                                </p>
                             </div>
                         </motion.div>
                     </SwiperSlide>

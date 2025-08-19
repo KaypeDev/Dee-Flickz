@@ -87,7 +87,7 @@ export default function CollabAndCTA() {
                 >
                     <Link
                         to='/contact'
-                        className='px-6 py-2 font-light text-[15px] lg:text-[30px] rounded-2xl bg-white  text-black hover:bg-gray-600 hover:text-white '
+                        className='px-6 py-2 font-medium text-[15px] lg:text-[30px] rounded-3xl bg-white  text-black hover:bg-[#6E6E6E] hover:text-white '
                     >CONTACT</Link>
                 </motion.div>
             </div>
