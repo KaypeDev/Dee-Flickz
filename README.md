@@ -24,6 +24,8 @@ https://www.linkedin.com/in/keanu-porral-88a179378/
 - **8/8/25:** Folder Structure, Tailwindcss and Framer Motion Install, and built Navbar and Hero section for Home.
 - **8/12/25** Finished the whole Homepage, no footer yet, made sure all the section also looked good on mobile.
               It looks good right now, but I'll go over it later to check for little details I can change.
+- **8/19/25** About page done, reused some videos but later will put the correct ones when I get the videos from my 
+              friend.
 
 
 ## How to Run
