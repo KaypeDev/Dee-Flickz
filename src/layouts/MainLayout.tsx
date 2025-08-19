@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ScrollToTop from '../components/ScrollToTop';
+import Footer from '../components/Footer';
 
 
 export default function MainLayout() {
@@ -12,6 +13,8 @@ export default function MainLayout() {
             <main className='flex-grow'>
                 <Outlet /> 
             </main>
+
+            <Footer/>
         </div>
     );
 
