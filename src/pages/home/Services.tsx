@@ -8,7 +8,7 @@ import { slides } from '../../config/serviceSlide'
 export default function Services() {
 
     return (
-        <section className="flex-col items-center justify-center">
+        <section className="flex-col items-center justify-center overflow-x-hidden">
 
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -41,11 +41,15 @@ export default function Services() {
                         slidesPerView: 3
                     },
                     950: {
-                        slidesPerView: 3.5
+                        slidesPerView: 3.5    
                     },
-                    1528: {
-                        slidesPerView: 3.8
+                    1024: {
+                        slidesPerView: 2.8  
+                    }, 
+                    1228: {
+                        slidesPerView: 3.5
                     }
+                    
                 }}
                 loop={false}
                 allowTouchMove={true}

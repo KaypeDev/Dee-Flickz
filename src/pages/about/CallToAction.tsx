@@ -8,7 +8,7 @@ export default function CallToAction() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.8 }}
+                transition={{ delay: 0.5, duration: 0.8, ease: 'easeIn' }}
                 style={{ backgroundColor: '#273e47' }}
                 className="w-90 h-85 lg:w-240 lg:h-125 text-[50px] flex flex-col items-center font-extrabold rounded-4xl p-5 gap-5">
                 <div>
@@ -34,8 +34,8 @@ export default function CallToAction() {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0, transition:{ duration: 0.6, delay: 0.3 }}}
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0, transition:{ duration: 0.8, delay: 0.5 }}}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}

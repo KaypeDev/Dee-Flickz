@@ -7,7 +7,7 @@ import Richard from "./Richard"
 export default function About() {
     return (
         <div>
-            <div className="w-full max-w-[1440px] mx-auto my-25">
+            <div className="w-full max-w-[1440px] mx-auto my-10 lg:my-20">
                 <Richard />
             </div>
 

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 export default function Gallery() {
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-4">
-            {gallery.map(({ title, date, src, link }, index) => (
+            {gallery.map(({ title, date, src, link, poster }, index) => (
                 <motion.div
-                    initial={{ opacity: 0, y: 60 }}
+                    initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
                     key={index}
                     className="overflow-hidden">
@@ -22,6 +22,7 @@ export default function Gallery() {
                             src={src}
                             title={`Video for ${title}`}
                             aria-label={`Video post titled ${title}`}
+                            poster={poster}
                             muted
                             playsInline
                             loop

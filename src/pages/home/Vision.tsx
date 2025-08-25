@@ -29,7 +29,7 @@ export default function Vision() {
                 <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1.5 }}
+                transition={{ duration: 0.9, delay: 0.9 }}
                 viewport={{ once: true }}
                 style={{ color: '#969696ff' }}
                 className="text-[17px] lg:text-[21px] xl:text-[25px] text-center font-medium w-85 xl:w-120">
@@ -40,7 +40,7 @@ export default function Vision() {
                  <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1.7 }}
+                transition={{ duration: 0.9, delay: 1.1 }}
                 viewport={{ once: true }}
                 style={{ color: '#969696ff' }}
                 className="text-[17px] lg:text-[21px] xl:text-[25px] text-center font-medium w-85 xl:w-120">

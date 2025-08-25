@@ -20,7 +20,7 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav className='top-0 left-0 w-full z-50 py-6'>
+        <nav className='top-0 left-0 w-full z-50 py-3 md:py-6'>
             <div className='max-w-[1440px] mx-auto px-6 md:px-20 flex justify-between items-center'>
 
                 <motion.div

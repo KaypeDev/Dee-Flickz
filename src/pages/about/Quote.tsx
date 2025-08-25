@@ -12,7 +12,7 @@ export default function Quote() {
                 <motion.p
                     initial={{ opacity: 0 }} 
                     whileInView={{ opacity: 1}} 
-                    transition={{ delay: 0.6, duration: 1.2 }}
+                    transition={{ delay: 0.5, duration: 1, ease: 'easeIn' }}
                     viewport={{ once: true }}
                     style={{ color: '#969696ff' }}
                     className='text-[15px] w-80 lg:text-[20px] lg:w-200 font-medium text-center'>

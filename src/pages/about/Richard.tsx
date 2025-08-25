@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import HeroVideo from '../../assets/video/herovideo.mp4'
 export default function Richard() {
     return (
-        <section className="relative flex flex-col lg:flex-row items-center mt-10">
+        <section className="relative flex flex-col lg:flex-row items-center mt-10 pb-10">
             <div className="flex flex-col relative lg:translate-x-40 z-10">
                 <motion.h1
                     layout
