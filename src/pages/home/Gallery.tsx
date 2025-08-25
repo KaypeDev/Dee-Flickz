@@ -1,5 +1,6 @@
 import { gallery } from "../../config/galleryLink";
 import { motion } from "framer-motion";
+import LazyGallery from "../../components/LazyGallery";
 
 export default function Gallery() {
     return (
@@ -18,22 +19,11 @@ export default function Gallery() {
                     </div>
 
                     <div className="relative w-full h-full">
-                        <video
-                            src={src}
-                            title={`Video for ${title}`}
-                            aria-label={`Video post titled ${title}`}
-                            poster={poster}
-                            muted
-                            playsInline
-                            loop
-                            preload="metadata"
-                            className="w-full h-70 md:h-100 object-cover"
-                            onMouseEnter={(e) => e.currentTarget.play()}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.pause();
-                                e.currentTarget.currentTime = 0;
-                            }}
-                        />
+                       <LazyGallery 
+                       src={src}
+                       poster={poster}
+                       title={title}
+                       />
 
                         {link && (
                             <a
