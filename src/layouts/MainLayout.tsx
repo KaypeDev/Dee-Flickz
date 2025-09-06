@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 export default function MainLayout() {
     return (
-        <div className='flex flex-col min-h-screen overflow-x-hidden '>
+        <div className='flex flex-col min-h-screen overflow-x-hidden overflow-y-hidden  '>
             <ScrollToTop/>
             <Navbar/>
             

@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
 body {
-    @apply text-white;
-    font-family: 'Inter', sans-serif;
-    background-color: black;
+  @apply text-white;
+  font-family: 'Inter', sans-serif;
+  background-color: black;
 }
 
 
@@ -16,4 +16,67 @@ body {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   color: whitesmoke
+}
+
+/* DayPicker overrides */
+/* Selected day */
+.rdp-selected .rdp-day_button {
+
+  color: white !important;
+  border-color: white !important;
+}
+
+.rdp-today:not(.rdp-outside) {
+  color: white !important;
+  background-color: #3d3d3d;
+  font-weight: bold !important;
+  border-radius: 50px;
+}
+
+.rdp-chevron {
+  fill: white !important;
+}
+
+@media (min-width: 1280px) {
+  .rdp-caption_label {
+    font-size: 1.75rem !important;
+  }
+
+  .rdp-weekdays {
+    padding: 1rem 0.6rem !important;
+    font-size: 1.6rem;
+  }
+
+  .rdp-day {
+    padding: .5rem 0.5rem !important;
+    font-size: 1.5rem;
+  }
+
+  .rdp-selected .rdp-day_button {
+    padding: .5rem 0.5rem !important;
+    font-size: 1.5rem !important;
+  }
+  .rdp-today:not(.rdp-outside) {
+  color: white !important;
+  background-color: #3d3d3d;
+  font-weight: bold !important; 
+}
+
+}
+
+
+/* html time clock icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+/* phone dropdown ctyle */
+select {
+  background-color: #1d1d1d;
+  color: white;
+}
+
+option {
+  background-color: #1d1d1d;
+  color: white;
 }

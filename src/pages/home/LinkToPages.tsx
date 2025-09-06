@@ -24,8 +24,8 @@ export default function LinkToPages() {
                 <div className="w-0.5 h-18  md:h-25 bg-white"></div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link to='/contact' className='flex flex-col items-center'>
-                        <h2 className="font-semibold text-[20px] lg:text-[25px] mb-1">CONTACT</h2>
+                    <Link to='/booking' className='flex flex-col items-center'>
+                        <h2 className="font-semibold text-[20px] lg:text-[25px] mb-1">BOOKING</h2>
                         <p
                             style={{ color: '#969696ff' }}
                             className="font-regular text-[12px] lg:text-[17px] text-center">
