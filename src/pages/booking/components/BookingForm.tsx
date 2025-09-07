@@ -59,15 +59,14 @@ export default function BookingForm() {
             }
 
         } catch (err: any) {
-            console.error(err);
+            console.error('Convex error:', err);
 
 
-            const message = typeof err.message === "string"
-                ? err.message.match(/Too many attempts\. Try again in \d+ minutes\./)?.[0]
-                || "Something went wrong. Please try again."
-                : "Something went wrong. Please try again.";
-
-            setError(message);
+            if (err.data?.type === 'rate_limit') {
+                setError(err.data.message); 
+            } else {
+                setError('Something went wrong. Please try again.');
+            }
 
         }
 

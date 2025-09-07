@@ -1,5 +1,5 @@
 import { mutation } from './_generated/server';
-import { v } from 'convex/values';
+import { v, ConvexError } from 'convex/values';
 import { checkRateLimiter, recordAttempt } from './lib/rateLimiter';
 
 export const createClient = mutation({
@@ -30,9 +30,14 @@ export const getClientByEmailPhoneWithLimit = mutation({
       windowMs,
     })
 
-    if (!emailLimit.allowed) {
+      if (!emailLimit.allowed) {
       const wait = Math.ceil((emailLimit.retryAfterMs ?? 0) / 60000);
-      throw new Error(`Too many attempts. Try again in ${wait} minutes.`);
+      throw new ConvexError({
+        type: 'rate_limit',
+        field: 'email',
+        message: `Too many attempts. Try again in ${wait} minutes.`,
+        retryAfterMinutes: wait,
+      });
     }
 
     const phoneLimit = await checkRateLimiter({
@@ -43,10 +48,15 @@ export const getClientByEmailPhoneWithLimit = mutation({
       windowMs,
     })
 
-    if (!phoneLimit.allowed) {
+     if (!phoneLimit.allowed) {
       const wait = Math.ceil((phoneLimit.retryAfterMs ?? 0) / 60000);
-      throw new Error(`Too many attempts. Try again in ${wait} minutes.`);
-    }
+      throw new ConvexError({
+        type: 'rate_limit',
+        field: 'phone',
+        message: `Too many attempts. Try again in ${wait} minutes.`,
+        retryAfterMinutes: wait,
+      });
+     }
 
 
     const client = await ctx.db
