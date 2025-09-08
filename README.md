@@ -60,6 +60,7 @@ This was my first time working with multi-step forms and Convex. It was honestly
 - Querying available dates
 - Getting `createMutation` to work properly
 But in the end, it was also **very rewarding**.
-
+### 9/8/25
+Added a simple loading state to the booking form to help avoid duplicate submissions and accidental clicks while things are processing. Inputs and buttons get disabled during API calls to keep things running smoothly and prevent any confusion. This also makes the experience a bit nicer for users, especially if the app feels a little slow sometimes.
 ## How to Run
 - npm run dev

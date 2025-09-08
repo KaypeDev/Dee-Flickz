@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { z } from 'zod';
 import type { BookingFormData } from '../../types/BookingFormData'
-import { isValidPhoneNumber, parsePhoneNumberFromString} from 'libphonenumber-js';
+import { isValidPhoneNumber, parsePhoneNumberFromString } from 'libphonenumber-js';
 import PhoneInput from "react-phone-number-input"
 import 'react-phone-number-input/style.css'
 
@@ -30,9 +30,9 @@ export default function StepClientFind({
   prev,
 }: StepClientFindProps) {
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setError("");
     const result = clientSchema.safeParse({
       email: data.email,
@@ -47,7 +47,12 @@ export default function StepClientFind({
     const parsed = parsePhoneNumberFromString(data.phone || '');
     const formattedPhone = parsed?.format('E.164') || '';
 
-    checkClientExists(data.email, formattedPhone, setError)
+    setIsLoading(true);
+    try {
+      await checkClientExists(data.email, formattedPhone, setError);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -59,6 +64,7 @@ export default function StepClientFind({
         <input
           type="email"
           value={data.email}
+          disabled={isLoading}
           onChange={(e) => updateData({ email: e.target.value })}
           className="w-full bg-[#1d1d1d] text-white px-4 py-2 xl:px-5 xl:py-3 rounded-xl"
         />
@@ -70,6 +76,7 @@ export default function StepClientFind({
           international
           defaultCountry="US"
           value={data.phone}
+          disabled={isLoading}
           countrySelectProps={{ native: false }}
           onChange={(value: string | undefined) => {
             updateData({ phone: value || '' });
@@ -81,21 +88,34 @@ export default function StepClientFind({
       {error && <p className="text-red-400 text-sm xl:text-[16px] ">{error}</p>}
 
       <div className="flex flex-col mt-4 items-center">
-        <button
-          onClick={handleSubmit}
-          className="bg-white xl:text-[30px] xl:h-13  text-black font-extrabold h-10 w-75 px-5 rounded-3xl hover:bg-[#1d1d1d] hover:text-white"
-        >
-          Continue
-        </button>
+        {isLoading ? (
+          <button
+            disabled
+            className="bg-white xl:text-[30px] xl:h-13 text-black font-extrabold h-10 w-75 px-5 rounded-3xl opacity-50 cursor-not-allowed"
+          >
+            Checking...
+          </button>
+        ) : (
+          <button
+            onClick={handleSubmit}
+            className="bg-white xl:text-[30px] xl:h-13 text-black font-extrabold h-10 w-75 px-5 rounded-3xl hover:bg-[#1d1d1d] hover:text-white"
+          >
+            Continue
+          </button>
+        )}
 
         <button
           onClick={handleNewClient}
-          className="text-[13px] xl:text-[16px] underline text-white opacity-60 hover:opacity-80 pt-5"
+          disabled={isLoading}
+          className={`text-[13px] xl:text-[16px] underline text-white opacity-60 hover:opacity-80 pt-5 
+            ${isLoading ? 'cursor-not-allowed opacity-30' : ''
+            }`}
         >
           Or continue as new client
         </button>
 
         <button
+          disabled={isLoading}
           onClick={prev}
           className="text-xs xl:text-[16px] opacity-60 hover:text-white pt-7 pb-2"
         >

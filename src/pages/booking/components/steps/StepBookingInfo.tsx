@@ -38,8 +38,9 @@ export default function StepBookingInfo({
     next,
     prev }: StepBookingInfoProps) {
     const [error, setError] = useState<string>('');
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setError("");
         const result = isExistingClient
             ? bookingInfoSchemaExistingClient.safeParse({
@@ -68,7 +69,12 @@ export default function StepBookingInfo({
         }
 
 
-        next();
+        setIsLoading(true);
+        try {
+            await next();
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -91,6 +97,7 @@ export default function StepBookingInfo({
                         <label className="text-[17px] xl:text-[20px] font-medium opacity-80 pl-2">Email</label>
                         <input
                             type="email"
+                            disabled={isLoading}
                             value={data.email}
                             onChange={(e) => updateData({ email: e.target.value })}
                             className="w-full bg-[#1d1d1d] text-white px-4 py-2 xl:px-5 xl:py-3 rounded-xl"
@@ -102,6 +109,7 @@ export default function StepBookingInfo({
                         <PhoneInput
                             international
                             defaultCountry="US"
+                             disabled={isLoading}
                             value={data.phone}
                             countrySelectProps={{ native: false }}
                             onChange={(value: string | undefined) => {
@@ -116,6 +124,7 @@ export default function StepBookingInfo({
                         <input
                             type="text"
                             value={data.name}
+                             disabled={isLoading}
                             onChange={(e) => updateData({ name: e.target.value })}
                             className="w-full bg-[#1d1d1d] text-white px-4 py-2 xl:px-5 xl:py-3 rounded-xl"
                         />
@@ -128,6 +137,7 @@ export default function StepBookingInfo({
                 <input
                     type="text"
                     value={data.eventLocation}
+                     disabled={isLoading}
                     onChange={(e) => updateData({ eventLocation: e.target.value })}
                     className="w-full bg-[#1d1d1d] text-white px-4 py-2 xl:px-5 xl:py-3 rounded-xl"
                 />
@@ -137,6 +147,7 @@ export default function StepBookingInfo({
                 <label className="text-[17px] xl:text-[20px] font-medium opacity-80 pl-2">Message (optional)</label>
                 <textarea
                     value={data.message}
+                     disabled={isLoading}
                     onChange={(e) => updateData({ message: e.target.value })}
                     className="w-full bg-[#1d1d1d] text-white px-4 py-2 xl:px-5 xl:py-3 rounded-xl resize-none"
                     rows={4}
@@ -146,15 +157,26 @@ export default function StepBookingInfo({
             {error && <p className="text-red-400 text-sm xl:text-[16px] ">{error}</p>}
 
             <div className="flex flex-col mt-4 items-center">
-                <button
-                    onClick={handleSubmit}
-                    className="bg-white xl:text-[30px] xl:h-13 text-black font-extrabold h-10 w-75 px-5 rounded-3xl hover:bg-[#1d1d1d] hover:text-white"
-                >
-                    Submit
-                </button>
+                {isLoading ? (
+                    <button
+                        onClick={handleSubmit}
+                        disabled={isLoading}
+                        className="bg-white xl:text-[30px] xl:h-13 text-black font-extrabold h-10 w-75 px-5 rounded-3xl hover:bg-[#1d1d1d] hover:text-white opacity-50 cursor-not-allowed"
+                    >
+                        Submitting...
+                    </button>
+                ) : (
+                    <button
+                        onClick={handleSubmit}
+                        className="bg-white xl:text-[30px] xl:h-13 text-black font-extrabold h-10 w-75 px-5 rounded-3xl hover:bg-[#1d1d1d] hover:text-white"
+                    >
+                        Submit
+                    </button>
+                )}
 
                 <button
                     onClick={prev}
+                    disabled={isLoading}
                     className="text-xs xl:text-[16px] opacity-60 hover:text-white pt-7 pb-2"
                 >
                     Back
