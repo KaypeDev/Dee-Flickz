@@ -25,8 +25,8 @@ export default function StepSelectDate({
     const [selectedTime, setSeletedTime] = useState<string>(data.time || '');
     const [error, setError] = useState<string>('');
 
-    const [loading, setLoading] = useState(false);
-    const [bookedDates, setBookedDates] = useState<Date[]>([]);
+    const [loading] = useState(false);
+    //will add more when we incorporate this client side with the dashboard side
 
     const canContinue = selectedDate && selectedTime;
 

@@ -38,29 +38,29 @@ Second, web performance matters a lot. I noticed that on a weak network signal, 
 ### 9/6/25
 It's been two weeks since my last commit. I usually don't push code often — I tend to keep everything local until the feature is fully working.
 Here’s what I’ve been up to:
-#### Page Update
-- Reworked the **Contact** page into a **Booking** page, since that made more sense for the app.
-#### Week 1: Design
-- Spent the first week purely designing the new page layout and flow.
-#### Week 2: Development
-- Started coding in the second week.
-- Finished the layout midweek.
-- Integrated **Convex** into the booking form, which took up most of the rest of the week.
-#### Built a Multi-Step Form
+- Page Update
+Reworked the **Contact** page into a **Booking** page, since that made more sense for the app.
+- Week 1: Design
+Spent the first week purely designing the new page layout and flow.
+- Week 2: Development
+Started coding in the second week.
+Finished the layout midweek.
+Integrated **Convex** into the booking form, which took up most of the rest of the week.
+- Built a Multi-Step Form
 The form allows users to:
-- Pick a date
-- Enter client details
-- Submit booking info
-#### Installed & Configured
-- zod
-- react-phone-number-input and libphonenumber-js for proper phone number handling
-#### Challenges & Wins
+Pick a date
+Enter client details
+Submit booking info
+- Installed & Configured
+zod
+react-phone-number-input and libphonenumber-js for proper phone number handling
+- Challenges & Wins
 This was my first time working with multi-step forms and Convex. It was honestly **pretty frustrating**, especially:
-- Defining mutations
-- Querying available dates
-- Getting `createMutation` to work properly
+Defining mutations
+Querying available dates
+Getting `createMutation` to work properly
 But in the end, it was also **very rewarding**.
 ### 9/8/25
-Added a simple loading state to the booking form to help avoid duplicate submissions and accidental clicks while things are processing. Inputs and buttons get disabled during API calls to keep things running smoothly and prevent any confusion. This also makes the experience a bit nicer for users, especially if the app feels a little slow sometimes.
+Added a simple loading state to the booking form to help avoid duplicate submissions and accidental clicks while things are processing(selectBooking is still work, this will be done once I have finished the dashboard side). Inputs and buttons get disabled during API calls to keep things running smoothly and prevent any confusion. This also makes the experience a bit nicer for users, especially if the app feels a little slow sometimes.
 ## How to Run
 - npm run dev
