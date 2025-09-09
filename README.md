@@ -1,66 +1,63 @@
-# Dee-Flickz website
+# Dee-Flickz Website
 
 ## Description
 
-This project is a portfolio website I'm building for a close friend who is a cinematographer. He creates videos for events, parties, sports, and even fashion brands. The goal of this site is to design a clean, visually engaging UI that highlights his work, story and also book with him.
+This project is a portfolio website I’m building for a close friend who is a cinematographer. He creates videos for events, parties, sports, and fashion brands. The goal of this site is to design a clean, visually engaging UI that highlights his work, story, and also enables clients to book with him.
+
+**Live Website:** https://deeflickz.vercel.app/
 
 ## Design
 
-I designed the layout in Figma, with a **mobile-first approach** since most of his clients discover him through Instagram.
-Figma link:
-https://www.figma.com/design/rLKtFIk57EuOtor6lpvGyP/Untitled?node-id=0-1&p=f&t=ndhDhyGJx66GqkoU-0
-Linkedin Link:
-https://www.linkedin.com/in/keanu-porral-88a179378/
+I designed the layout in **Figma**, using a **mobile-first approach** since most of his clients discover him through Instagram.  
+Figma link: https://www.figma.com/design/rLKtFIk57EuOtor6lpvGyP/Untitled?node-id=0-1&p=f&t=ndhDhyGJx66GqkoU-0  
+
+LinkedIn profile: https://www.linkedin.com/in/keanu-porral-88a179378/
 
 ## Tech Stack
 
-- React
-- Vite
-- Tailwind CSS
-- Framer motion
+- React  
+- Vite  
+- Tailwind CSS  
+- Framer Motion  
+- Convex (Serverless backend for data management)  
+- Vercel (Deployment and hosting platform)  
 
 ## Progress
 
-- **8/8/25:** 
-Folder Structure, Tailwindcss and Framer Motion Install, and built Navbar and Hero section for Home.
-- **8/12/25** 
-Finished the whole Homepage, no footer yet, made sure all the section also looked good on mobile.
-It looks good right now, but I'll go over it later to check for little details I can change.
-- **8/19/25** 
-About page done, reused some videos but later will put the correct ones when I get the videos from my 
-friend.
-- **8/25/25** 
-I just deployed the project on Vercel and learned two important things:
+- **08/08/25**  
+  Set up folder structure, installed Tailwind CSS and Framer Motion, built Navbar and Hero section for Home.
 
-First, I should’ve deployed from the start. There were a lot of issues that only showed up after deployment — like video files being too large, unexpected horizontal scroll on mobile, broken animations, and more. Everything seemed fine locally, but production exposed the real problems.
+- **08/12/25**  
+  Finished the entire Homepage (footer pending). Ensured all sections are responsive and look good on mobile devices. Planned to revisit for minor UI refinements.
 
-Second, web performance matters a lot. I noticed that on a weak network signal, the site barely works. This is my first time handling deployment, so I’ll be keeping a closer eye on performance and reliability from now on — after all, a website isn’t much of a website if it doesn’t work.
-### 9/6/25
-It's been two weeks since my last commit. I usually don't push code often — I tend to keep everything local until the feature is fully working.
-Here’s what I’ve been up to:
-- Page Update
-Reworked the **Contact** page into a **Booking** page, since that made more sense for the app.
-- Week 1: Design
-Spent the first week purely designing the new page layout and flow.
-- Week 2: Development
-Started coding in the second week.
-Finished the layout midweek.
-Integrated **Convex** into the booking form, which took up most of the rest of the week.
-- Built a Multi-Step Form
-The form allows users to:
-Pick a date
-Enter client details
-Submit booking info
-- Installed & Configured
-zod
-react-phone-number-input and libphonenumber-js for proper phone number handling
-- Challenges & Wins
-This was my first time working with multi-step forms and Convex. It was honestly **pretty frustrating**, especially:
-Defining mutations
-Querying available dates
-Getting `createMutation` to work properly
-But in the end, it was also **very rewarding**.
-### 9/8/25
-Added a simple loading state to the booking form to help avoid duplicate submissions and accidental clicks while things are processing(selectBooking is still work, this will be done once I have finished the dashboard side). Inputs and buttons get disabled during API calls to keep things running smoothly and prevent any confusion. This also makes the experience a bit nicer for users, especially if the app feels a little slow sometimes.
+- **08/19/25**  
+  Completed About page. Temporarily reused some videos; will replace with client’s final videos once received.
+
+- **08/25/25**  
+  Deployed the project on Vercel and gained valuable insights:  
+  1. Early deployment is essential — deployment exposed issues (large video files, horizontal scrolling on mobile, broken animations) not apparent in local development.  
+  2. Web performance is critical — the site struggled on weak networks. Prioritizing optimization and reliability moving forward.
+
+- **09/06/25**  
+  Two weeks since last commit; typically keep features local until fully functional. Activities include:  
+  - **Page Update:** Reworked Contact page into Booking page for better app flow.  
+  - **Week 1 (Design):** Crafted new page layout and user flow in detail.  
+  - **Week 2 (Development):** Implemented the new layout, integrated **Convex** backend into booking form.  
+  - **Multi-Step Booking Form Features:**  
+    - Date picker  
+    - Client information input  
+    - Booking submission functionality  
+  - **Libraries Installed:**  
+    - `zod` for schema validation  
+    - `react-phone-number-input` and `libphonenumber-js` for phone number validation and formatting  
+  - **Challenges & Wins:**  
+    - First experience with multi-step forms and Convex was challenging (mutation definitions, querying availability, managing `createMutation`).  
+    - Resulted in a rewarding learning experience.
+
+- **09/08/25**  
+  Added a loading state to the booking form to prevent duplicate submissions and accidental clicks during API calls (selectBooking is ongoing; to be completed alongside the dashboard). Disabled inputs and buttons during loading to improve user experience and reduce errors.
+
 ## How to Run
-- npm run dev
+
+```bash
+npm run dev
