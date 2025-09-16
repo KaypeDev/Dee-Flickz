@@ -42,9 +42,9 @@ export default function CallToAction() {
                     className="flex items-start"
                 >
                     <Link
-                        to='/contact'
+                        to='/booking'
                         className='px-6 py-2 font-medium text-[15px] lg:text-[30px] rounded-4xl bg-white  text-[#273e47] hover:bg-[#618492ff] hover:text-white '
-                    >CONTACT</Link>
+                    >BOOK</Link>
                 </motion.div>
             </motion.div>
 
